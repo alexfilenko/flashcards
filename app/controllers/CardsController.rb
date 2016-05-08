@@ -1,5 +1,8 @@
 class CardsController < ApplicationController
   def index
-  	@cards = Cards.find(1)
+   @cards = Card.all
+  end
+
+  def create
   end
 end
