@@ -1,26 +1,26 @@
 class CardsController < ApplicationController
   def index
-   @cards = Card.all
+   @card = Card.all
   end
 
   def show
-  	@cards = Cards.find(params[:id])
+  	@card = Card.find(params[:id])
 
   def create
   end
 
   def create
-  @cards = Cards.new(carts_params)
- 
-  if @cards.save
-  redirect_to @cards
-else
-	render 'new'
-end
-end
+    @card = Card.new(card_params)
+
+    if @card.save
+      redirect_to cards_path
+    else
+      render 'new'
+    end
+  end
  
 private
-  def cards_params
-    params.require(:cards).permit(:title, :text)
+  def card_params
+    params.require(:card).permit(:original_text, :translated_text, :review_date)
   end
 end
