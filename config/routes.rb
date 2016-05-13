@@ -11,7 +11,7 @@ root 'welcome#index'
   # Example of regular route:
     # get '/cards/:id' => 'Cards#show'
     #get '/cards/:id', to: 'cards#show', as: 'cards'
-    resources :cards, only: [:index, :create]
+    resources :cards
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
