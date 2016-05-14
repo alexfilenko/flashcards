@@ -1,4 +1,4 @@
 class Card < ActiveRecord::Base
-	validates :original_text, presence: true,
-                    length: { minimum: 2 }
+	validates :original_text, :translated_text presence: true,
+                    
 end
