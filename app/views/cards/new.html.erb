@@ -1,0 +1,24 @@
+<h1>New Cards</h1>
+
+<%= form_for :card, url: cards_path do |f| %>
+  <p>
+    <%= f.label :original_text %><br>
+    <%= f.text_field :original_text %>
+  </p>
+ 
+  <p>
+    <%= f.label :translated_text %><br>
+    <%= f.text_area :translated_text %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+
+<ul class="navigation-links">
+        <ul class="nav nav-pills">
+        <li><%= link_to 'На главную', controller: 'welcome' %></li>
+ </ul>       
+

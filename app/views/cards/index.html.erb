@@ -1,0 +1,29 @@
+<h1>Все карточки</h1>
+ 
+<table>
+  <tr>
+    <th>Original text</th>
+    <th>Translated text</th>
+    <th>Data</th>
+  </tr>
+ 
+  <% @cards.each do |card| %>
+    <tr>
+      <td><%= card.original_text %></td>
+      <td><%= card.translated_text %></td>
+      <td><%= card.review_date %></td>
+      <!--<td><%= link_to 'Все карточки' %></td> -->
+      <td><%= link_to 'Показать', card_path(card) %></td>
+      <td><%= link_to 'Редактировать', edit_card_path(card) %></td>
+      <td><%= link_to 'Удалить', card_path(card),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<ul class="navigation-links">
+        <ul class="nav nav-pills">
+        <li><%= link_to 'На главную', controller: 'welcome' %></li>
+ </ul>  
+
